@@ -1,8 +1,9 @@
 ﻿using System;
+using Catharsium.WordDistance.Core.Logic.Interfaces;
 
 namespace Catharsium.WordDistance.Core.Logic
 {
-    public class DistanceCalculator
+    public class DistanceCalculator : IDistanceCalculator
     {
         public int CalculateDistance(string s1, string s2)
         {

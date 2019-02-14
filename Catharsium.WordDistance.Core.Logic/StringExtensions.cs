@@ -10,7 +10,7 @@
 
         public static decimal SimilarityTo(string s1, string s2)
         {
-            return new SimilarityCalculator().CalculateSimilarity(s1, s2);
+            return new SimilarityCalculator(new DistanceCalculator()).CalculateSimilarity(s1, s2);
         }
     }
 }
