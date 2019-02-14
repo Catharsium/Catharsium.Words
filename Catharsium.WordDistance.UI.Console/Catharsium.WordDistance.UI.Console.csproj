@@ -5,4 +5,8 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Catharsium.WordDistance.Core.Logic\Catharsium.WordDistance.Core.Logic.csproj" />
+  </ItemGroup>
+
 </Project>
