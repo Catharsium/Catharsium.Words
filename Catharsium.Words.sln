@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WordDistance", "WordDistance", "{5B72960E-7077-4DF8-A426-E1FDAC0871F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.WordDistance.Logic", "WordDistance\Catharsium.WordDistance.Core.Logic\Catharsium.WordDistance.Logic.csproj", "{98451AD7-D501-490E-B10B-CD73ED404C3E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.WordDistance.Logic.Tests", "WordDistance\Catharsium.WordDistance.Core.Logic.Tests\Catharsium.WordDistance.Logic.Tests.csproj", "{2B174B2C-F610-44F3-A13D-340A955C1665}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.WordDistance.Command", "WordDistance\Catharsium.WordDistance.UI.Console\Catharsium.WordDistance.Command.csproj", "{4933D82F-0C54-46B9-BA2A-4CA3082615EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Catharsium.WordDistance.Command.Tests", "WordDistance\Catharsium.WordDistance.UI.Console.Tests\Catharsium.WordDistance.Command.Tests.csproj", "{BE444465-881F-45C7-98F0-2904CB1EFC15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WordCloud", "WordCloud", "{43EFDF77-2E77-436D-8A66-1DF9757009D9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98451AD7-D501-490E-B10B-CD73ED404C3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98451AD7-D501-490E-B10B-CD73ED404C3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98451AD7-D501-490E-B10B-CD73ED404C3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98451AD7-D501-490E-B10B-CD73ED404C3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B174B2C-F610-44F3-A13D-340A955C1665}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B174B2C-F610-44F3-A13D-340A955C1665}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B174B2C-F610-44F3-A13D-340A955C1665}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B174B2C-F610-44F3-A13D-340A955C1665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4933D82F-0C54-46B9-BA2A-4CA3082615EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4933D82F-0C54-46B9-BA2A-4CA3082615EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4933D82F-0C54-46B9-BA2A-4CA3082615EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4933D82F-0C54-46B9-BA2A-4CA3082615EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE444465-881F-45C7-98F0-2904CB1EFC15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE444465-881F-45C7-98F0-2904CB1EFC15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE444465-881F-45C7-98F0-2904CB1EFC15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE444465-881F-45C7-98F0-2904CB1EFC15}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98451AD7-D501-490E-B10B-CD73ED404C3E} = {5B72960E-7077-4DF8-A426-E1FDAC0871F4}
+		{2B174B2C-F610-44F3-A13D-340A955C1665} = {5B72960E-7077-4DF8-A426-E1FDAC0871F4}
+		{4933D82F-0C54-46B9-BA2A-4CA3082615EF} = {5B72960E-7077-4DF8-A426-E1FDAC0871F4}
+		{BE444465-881F-45C7-98F0-2904CB1EFC15} = {5B72960E-7077-4DF8-A426-E1FDAC0871F4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B8A34BCF-ADFF-4F75-A5D5-891426739E13}
+	EndGlobalSection
+EndGlobal
