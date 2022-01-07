@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <DebugType>embedded</DebugType>
+    <PackageId>Catharsium.WordDistance</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Catharsium.Util.IO.Console" Version="2021.11.9.19" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Catharsium.WordDistance.Core.Logic\Catharsium.WordDistance.Logic.csproj" />
+  </ItemGroup>
+
+</Project>
