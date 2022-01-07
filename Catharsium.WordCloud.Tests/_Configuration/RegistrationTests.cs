@@ -1,4 +1,6 @@
-﻿using Catharsium.WordCloud._Configuration;
+﻿using Catharsium.Util.Testing.Extensions;
+using Catharsium.WordCloud._Configuration;
+using Catharsium.WordCloud.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -15,6 +17,8 @@ public class RegistrationTests
         var configuration = Substitute.For<IConfiguration>();
 
         serviceCollection.AddWordCloudLogic(configuration);
+        serviceCollection.ReceivedRegistration<IWordCounter, WordCounter>();
+        serviceCollection.ReceivedRegistration<IWordSanitizer, WordSanitizer>();
     }
 
 

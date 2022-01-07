@@ -1,29 +1,32 @@
 ﻿using Catharsium.Util.Testing;
 using Catharsium.WordCloud.Interfaces;
+using Catharsium.WordCloud.Logic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-namespace Catharsium.WordCloud.Logic.Tests.Models;
+using NSubstitute;
+
+namespace Catharsium.WordCloud.Tests.Logic;
 
 [TestClass]
 public class WordCounterTests : TestFixture<WordCounter>
 {
+    #region Fixture
+
+    [TestInitialize]
+    public void Initialize()
+    {
+        this.GetDependency<IWordSanitizer>().Sanitize(Arg.Any<string>()).Returns(args => args[0]);
+    }
+
+    #endregion
+
+    #region Add
+
     [TestMethod]
     public void Add_NewWord_IsAddedWithFrequency1()
     {
         var word = "catharsium";
         this.Target.Add(word);
         Assert.AreEqual(1, this.Target.Words[word]);
-    }
-
-
-    [TestMethod]
-    public void Add_ExistingWordWithCapitals_IsAddedAsLowerCase()
-    {
-        var word = "catharsium";
-        var expected = 123;
-        this.Target.Words[word] = expected - 1;
-
-        this.Target.Add(word.ToUpper());
-        Assert.AreEqual(expected, this.Target.Words[word]);
     }
 
 
@@ -74,4 +77,6 @@ public class WordCounterTests : TestFixture<WordCounter>
         Assert.AreEqual(frequency2, this.Target.Words[word2]);
         Assert.AreEqual(frequency3, this.Target.Words[word3]);
     }
+
+    #endregion
 }

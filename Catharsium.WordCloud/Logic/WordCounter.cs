@@ -1,11 +1,17 @@
 ﻿using Catharsium.WordCloud.Interfaces;
-using System.Text.RegularExpressions;
 namespace Catharsium.WordCloud.Logic;
 
 public class WordCounter : IWordCounter
 {
+    private readonly IWordSanitizer wordSanitizer;
 
     public Dictionary<string, int> Words { get; set; } = new Dictionary<string, int>();
+
+
+    public WordCounter(IWordSanitizer wordSanitizer)
+    {
+        this.wordSanitizer = wordSanitizer;
+    }
 
 
     public void Add(params string[] texts)
@@ -13,7 +19,7 @@ public class WordCounter : IWordCounter
         foreach (var text in texts) {
             var words = text.Split(' ');
             foreach (var word in words) {
-                var cleanWord = Regex.Replace(word, @"[^0-9a-zA-Z-]+", "").ToLower();
+                var cleanWord = this.wordSanitizer.Sanitize(word);
                 if (this.Words.ContainsKey(cleanWord)) {
                     this.Words[cleanWord]++;
                 }
