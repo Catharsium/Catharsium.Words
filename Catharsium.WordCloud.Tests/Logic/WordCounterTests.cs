@@ -31,6 +31,17 @@ public class WordCounterTests : TestFixture<WordCounter>
 
 
     [TestMethod]
+    public void Add_SanitizerReturnsNull_WordIsNotAdded()
+    {
+        var word = "catharsium";
+        this.GetDependency<IWordSanitizer>().Sanitize(word).Returns(null as string);
+
+        this.Target.Add(word);
+        Assert.IsFalse(this.Target.Words.ContainsKey(word));
+    }
+
+
+    [TestMethod]
     public void Add_ExistingWord_FrequencyIncreasesByOne()
     {
         var word = "catharsium";

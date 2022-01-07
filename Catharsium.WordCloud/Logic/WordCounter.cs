@@ -20,6 +20,10 @@ public class WordCounter : IWordCounter
             var words = text.Split(' ');
             foreach (var word in words) {
                 var cleanWord = this.wordSanitizer.Sanitize(word);
+                if (cleanWord == null) {
+                    continue;
+                }
+
                 if (this.Words.ContainsKey(cleanWord)) {
                     this.Words[cleanWord]++;
                 }
