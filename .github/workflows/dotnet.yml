@@ -2,8 +2,8 @@ name: Build
 
 on:
   push:
-    branches: main
-    tags: '**'
+    branches: ['main']
+    tags: ['**']
   pull_request:
 
 jobs:
@@ -20,6 +20,8 @@ jobs:
         run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet test --no-build --verbosity normal
+
+
   pack:
     runs-on: ubuntu-latest
     name: Pack
@@ -40,6 +42,8 @@ jobs:
         with:
           name: artifacts
           path: ./artifacts
+
+
   publish:
     runs-on: ubuntu-latest
     name: Publish
@@ -48,7 +52,7 @@ jobs:
       - name: Setup dotnet
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '5.0.203'  
+          dotnet-version: '6.0.x'  
       - uses: actions/download-artifact@v1
         with:
           name: artifacts
