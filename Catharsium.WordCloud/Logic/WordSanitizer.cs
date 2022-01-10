@@ -26,6 +26,11 @@ public class WordSanitizer : IWordSanitizer
         if (word == null) {
             return word;
         }
+
+        word = word.Trim();
+        if (string.IsNullOrEmpty(word)) {
+            return null;
+        }
         if (this.settings.ExcludedWords.Contains(word)) {
             return null;
         }

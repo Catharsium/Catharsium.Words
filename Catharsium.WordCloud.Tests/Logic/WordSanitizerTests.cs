@@ -37,6 +37,14 @@ namespace Catharsium.WordCloud.Tests.Logic
 
 
         [TestMethod]
+        public void Sanitize_OnlyWhitespaceWord_ReturnsNull()
+        {
+            var actual = this.Target.Sanitize(" ");
+            Assert.IsNull(actual);
+        }
+
+
+        [TestMethod]
         public void Sanitize_CleanWord_ReturnsWordUnchanged()
         {
             var word = "myword";
