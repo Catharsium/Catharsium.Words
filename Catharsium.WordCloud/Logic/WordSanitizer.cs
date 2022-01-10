@@ -1,7 +1,6 @@
 ﻿using Catharsium.WordCloud._Configuration;
 using Catharsium.WordCloud.Interfaces;
 using System.Text.RegularExpressions;
-
 namespace Catharsium.WordCloud.Logic;
 
 public class WordSanitizer : IWordSanitizer
@@ -11,16 +10,25 @@ public class WordSanitizer : IWordSanitizer
 
     public WordSanitizer(WordCloudSettings settings)
     {
+        if (settings.ExcludedWords == null) {
+            throw new ArgumentNullException(nameof(settings.ExcludedWords));
+        }
+        if (settings.WordMappings == null) {
+            throw new ArgumentNullException(nameof(settings.WordMappings));
+        }
+
         this.settings = settings;
     }
 
 
     public string Sanitize(string word)
     {
-        if(this.settings.ExcludedWords.Contains(word)) {
+        if (word == null) {
+            return word;
+        }
+        if (this.settings.ExcludedWords.Contains(word)) {
             return null;
         }
-
         if (this.settings.WordMappings.ContainsKey(word)) {
             return this.settings.WordMappings[word];
         }

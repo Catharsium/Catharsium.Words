@@ -11,23 +11,23 @@ namespace Catharsium.WordCloud.Logic.Tests._Configuration;
 public class RegistrationTests
 {
     [TestMethod]
-    public void AddWordDistanceLogic_RegistersDependencies()
+    public void AddWordCloud_RegistersDependencies()
     {
         var serviceCollection = Substitute.For<IServiceCollection>();
         var configuration = Substitute.For<IConfiguration>();
 
-        serviceCollection.AddWordCloudLogic(configuration);
+        serviceCollection.AddWordCloud(configuration);
         serviceCollection.ReceivedRegistration<IWordCounter, WordCounter>();
         serviceCollection.ReceivedRegistration<IWordSanitizer, WordSanitizer>();
     }
 
 
     [TestMethod]
-    public void AddWordDistanceLogic_RegistersPackages()
+    public void AddWordCloud_RegistersPackages()
     {
         var serviceCollection = Substitute.For<IServiceCollection>();
         var configuration = Substitute.For<IConfiguration>();
 
-        serviceCollection.AddWordCloudLogic(configuration);
+        serviceCollection.AddWordCloud(configuration);
     }
 }

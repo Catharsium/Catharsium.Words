@@ -29,6 +29,14 @@ namespace Catharsium.WordCloud.Tests.Logic
         #region Sanitize
 
         [TestMethod]
+        public void Sanitize_NullWord_ReturnsNull()
+        {
+            var actual = this.Target.Sanitize(null);
+            Assert.IsNull(actual);
+        }
+
+
+        [TestMethod]
         public void Sanitize_CleanWord_ReturnsWordUnchanged()
         {
             var word = "myword";

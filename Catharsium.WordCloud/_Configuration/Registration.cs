@@ -7,7 +7,7 @@ namespace Catharsium.WordCloud._Configuration;
 
 public static class Registration
 {
-    public static IServiceCollection AddWordCloudLogic(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddWordCloud(this IServiceCollection services, IConfiguration configuration)
     {
         var settings = configuration.Load<WordCloudSettings>();
         services.AddSingleton<WordCloudSettings, WordCloudSettings>(provider => settings);
